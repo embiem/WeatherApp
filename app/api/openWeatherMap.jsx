@@ -18,8 +18,8 @@ module.exports = {
           weather_txt:  response.data.weather[0].main
         };
       }
-    }, function (response) {
-      throw new Error(response.data.message);
+    }, function (err) {
+      throw new Error("Unable to fetch weather for the location '"+location+"'");
     });
   }
 }
